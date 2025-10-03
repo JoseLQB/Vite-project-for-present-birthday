@@ -1,2 +1,2 @@
-# Vite-project-for-present-birthday
+# vite-project-for-present-birthday
 In progress
