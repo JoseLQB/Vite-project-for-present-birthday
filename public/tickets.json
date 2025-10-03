@@ -1,0 +1,22 @@
+[
+  {
+    "band": "My Chemical Romance",
+    "tour": "2026 European Tour",
+    "city": "Madrid",
+    "venue": "WiZink Center",
+    "date": "2026-05-14T20:30:00",
+    "sector": "Pista",
+    "seat": "Entrada General",
+    "code": "MCR-MAD-1-ABCD1234"
+  },
+  {
+    "band": "My Chemical Romance",
+    "tour": "2026 European Tour",
+    "city": "Madrid",
+    "venue": "WiZink Center",
+    "date": "2026-05-14T20:30:00",
+    "sector": "Pista",
+    "seat": "Entrada General",
+    "code": "MCR-MAD-2-EFGH5678"
+  }
+]

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Chemical Surprise</title>
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+    <!-- Estilos (Vite servirá /src/styles.css sin problema) -->
+    <link rel="stylesheet" href="/src/styles.css">
+  </head>
+  <body>
+    <div id="app">
+      <header class="hero">
+        <h1 class="glitch">Feliz Sorpresa</h1>
+        <p>Tenemos una cita con <strong>My Chemical Romance</strong> en Madrid.</p>
+        <button id="revealBtn" aria-controls="tickets">Revelar entradas</button>
+      </header>
+
+      <section id="tickets" hidden></section>
+
+      <!-- Reproductor YouTube (oculto/minimizado) -->
+      <div id="playerWrap" aria-hidden="true">
+        <iframe
+          id="yt"
+          width="0"
+          height="0"
+          src="https://www.youtube.com/embed/RRKJiM9Njr8?enablejsapi=1&rel=0"
+          title="Welcome to the Black Parade"
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- Tu TypeScript (Vite lo compila al vuelo) -->
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
