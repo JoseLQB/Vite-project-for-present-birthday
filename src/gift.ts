@@ -48,7 +48,6 @@ export type Ticket = {
   }
   
   // ---------- REVEAL ----------
-  // ---------- REVEAL ----------
   export async function reveal(): Promise<void> {
     // 1) Música al click (gesto usuario)
     playYouTube();
@@ -57,12 +56,10 @@ export type Ticket = {
     const dataPromise = loadTickets();
   
     // 3) Arranca los temporizadores desde el clic
-    const startRevealDelay = 63000;   // 63s -> mostrar entradas
-    const showDownloadsDelay = 44000; // 49s después -> mostrar descargas
+    const startRevealDelay = 63000;
+    const showDownloadsDelay = 46000;
   
-    // PROGRAMAR: Mostrar entradas tras 63s desde el clic
     const revealTimer = setTimeout(async () => {
-      // Espera los datos si aún no han llegado
       const data = await dataPromise;
   
       ticketsEl.innerHTML = data.map(ticketCard).join('');
@@ -77,11 +74,9 @@ export type Ticket = {
 
       if (revealBtn) {
         revealBtn.classList.add('fading');
-        // opcional: removerlo del DOM tras el fade
         setTimeout(() => revealBtn.remove(), 700);
       }
   
-      // PROGRAMAR: Mostrar enlaces tras 49s desde que aparecen las entradas
       const linksTimer = setTimeout(() => {
         const hidden = document.querySelectorAll<HTMLElement>('.actions.hidden');
         hidden.forEach((el) => el.classList.remove('hidden'));
@@ -104,17 +99,15 @@ export type Ticket = {
       document.body.appendChild(giftEl);
     }
   
-    // ✨ reinicia el estado de opacidad (por si ya venía visible)
     giftEl.classList.remove('visible');
-    void giftEl.offsetWidth; // fuerza reflow para reiniciar la transición
-    giftEl.classList.add('visible'); // dispara el fade-in
+    void giftEl.offsetWidth;
+    giftEl.classList.add('visible');
     document.body.classList.add('revealing');
 
   }
   
   // ---------- INIT (binding del botón) ----------
   function onClickReveal() {
-    // delega en reveal(); el juego llamará al botón o a reveal() tras ganar
     reveal().catch(console.error);
   }
   

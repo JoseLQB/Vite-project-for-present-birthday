@@ -46,7 +46,7 @@ function noteToFreq(note: string): number {
 // 🔔 SECUENCIA DE 11 NOTAS (EDITABLE)
 // Sustituye por las notas exactas de tu intro; esto es un ejemplo aproximado:
 const INTRO_NOTES: string[] = [
-  'G4','F#4','B4','E4','D4','G4','C4','B4','E4','A4','D4'
+  'G4','F#4','B4','E4','D4','G4','C4','B4','E4','A#4','D4'
 ];
 // Duraciones en milisegundos (puedes ajustar si alguna debe ser más larga/corta)
 const INTRO_DUR_MS = 320; // duración base por nota
