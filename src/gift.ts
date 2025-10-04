@@ -57,7 +57,7 @@ export type Ticket = {
     const dataPromise = loadTickets();
   
     // 3) Arranca los temporizadores desde el clic
-    const startRevealDelay = 630;   // 63s -> mostrar entradas
+    const startRevealDelay = 63000;   // 63s -> mostrar entradas
     const showDownloadsDelay = 44000; // 49s después -> mostrar descargas
   
     // PROGRAMAR: Mostrar entradas tras 63s desde el clic
