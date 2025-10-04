@@ -1,22 +1,24 @@
 [
   {
     "band": "My Chemical Romance",
-    "tour": "2026 European Tour",
+    "tour": "The Black Parade 2026",
     "city": "Madrid",
-    "venue": "WiZink Center",
-    "date": "2026-05-14T20:30:00",
+    "venue": "Iberdrola Music",
+    "date": "2026-07-18T20:30:00",
     "sector": "Pista",
-    "seat": "Entrada General",
-    "code": "MCR-MAD-1-ABCD1234"
+    "seat": "Entrada General Pit",
+    "code": "MCR-MAD-1-ABCD1234",
+    "pdfUrl": "fakeLink/pdfs/mcr_mad_1.pdf"
   },
   {
     "band": "My Chemical Romance",
-    "tour": "2026 European Tour",
+    "tour": "The Black Parade 2026",
     "city": "Madrid",
-    "venue": "WiZink Center",
-    "date": "2026-05-14T20:30:00",
+    "venue": "Iberdrola Music",
+    "date": "2026-07-18T20:30:00",
     "sector": "Pista",
-    "seat": "Entrada General",
-    "code": "MCR-MAD-2-EFGH5678"
+    "seat": "Entrada General Pit",
+    "code": "MCR-MAD-2-EFGH5678",
+    "pdfUrl": "fakeLink/pdfs/mcr_mad_1.pdf"
   }
 ]

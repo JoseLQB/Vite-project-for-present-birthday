@@ -1,8 +1,13 @@
 :root {
     --bg: #0b0b0b;
     --fg: #fff;
+    --gr: #999898;
     --accent: #b71c1c;
 }
+
+html, body {
+    caret-color: transparent;   /* oculta el cursor de texto */
+  }
 
 * {
     box-sizing: border-box;
@@ -16,13 +21,39 @@ body {
 }
 
 .hero {
-    min-height: 60vh;
-    display: grid;
-    place-items: center;
-    text-align: center;
-    padding: 3rem;
-    gap: 1rem;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    position: relative
+  }
+  #revealBtn {
+    transition: opacity .6s ease, visibility 0s linear .6s;
+  }
+  #revealBtn.fading {
+    opacity: 0;
+    visibility: hidden;      /* se oculta al final de la transición */
+    pointer-events: none;
+  }
+  
+  .poster-below {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 12s ease, transform 1200ms ease;
+    max-width: min(92vw, 960px);  /* fluido y limitado */
+  }
+  .poster-below.visible {
+    opacity: 1;
+    transform: none;
+  }
+  .poster-below img {
+    display: block;
+    width: 100%;
+    height: auto;
+    box-shadow: #0b0b0b;
+    box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    background: rgba(255,255,255,.02);
+  }
 
 h1.glitch {
     font-family: "Cinzel", serif;
@@ -36,6 +67,7 @@ button#revealBtn {
     border: 1px solid var(--fg);
     padding: .9rem 1.4rem;
     cursor: pointer;
+    color:  var(--gr);
 }
 
 button#revealBtn:hover {
@@ -69,7 +101,7 @@ button#revealBtn:hover {
 }
 
 .fade-in { 
-  animation: fadeIn 22s ease both; /* <- 12 segundos */
+  animation: fadeIn 60s ease both; /* <- 12 segundos */
 }
 
 @keyframes fadeIn {
@@ -79,3 +111,194 @@ button#revealBtn:hover {
 
 .ticket:nth-child(1) { animation-delay: 0s; }
 .ticket:nth-child(2) { animation-delay: .4s; }
+
+.actions { margin-top: .9rem; }
+a.download {
+  display: inline-block;
+  border: 1px solid #fff;
+  padding: .5rem .9rem;
+  text-decoration: none;
+  color: #fff;
+}
+a.download:hover { border-color: #b71c1c; color: #b71c1c; }
+
+.hidden { display: none; }
+
+.actions {
+  margin-top: 1rem;
+  text-align: center;
+  transition: opacity 2s ease;
+  opacity: 1;
+}
+
+/* Para que aparezcan suavemente */
+.actions.hidden {
+  opacity: 0;
+}
+
+
+
+
+
+/* JUEGO */
+
+
+.gate {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .gate .hud {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    font-family: "Cinzel", serif;
+    letter-spacing: .03em;
+  }
+  
+  #snake {
+    border: 1px solid #333;
+    background: rgba(255,255,255,.02);
+    image-rendering: pixelated;
+  }
+  
+  .gate .controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .gate button {
+    background: transparent;
+    border: 1px solid var(--fg);
+    padding: .6rem 1rem;
+    color: var(--gr);
+    cursor: pointer;
+  }
+  .gate button:hover { border-color: var(--accent); color: var(--accent); }
+  
+  .status { min-height: 1.2em; opacity: .9; }
+
+  .gate, #gift { transition: opacity .4s ease; }
+.gate.fading, #gift.fading { opacity: 0; }
+
+
+/* ---------- FADE IN DE LA PÁGINA DEL REGALO ---------- */
+#gift {
+    opacity: 0;
+    transition: opacity 1.8s ease-in;
+  }
+  
+  #gift.visible {
+    opacity: 1;
+  }
+
+
+  body.revealing #gift {
+    animation: fadeInPage 5s ease forwards;
+  }
+  
+  @keyframes fadeInPage {
+    from { opacity: 0; filter: blur(10px); }
+    to { opacity: 1; filter: none; }
+  }
+
+/* POSTER **/
+
+/* Hero en 2 columnas en desktop; apilado en móvil */
+.hero-grid {
+    display: grid;
+    /* Columnas simétricas en lados + columna central de ancho limitado */
+    grid-template-columns: clamp(0px, 25vw, 360px) minmax(320px, 760px) clamp(0px, 25vw, 360px);
+    gap: 2rem;
+    align-items: center;
+    /* centra el bloque completo en la página si quieres límite de ancho */
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  @media (max-width: 820px) {
+    .hero-grid {
+      grid-template-columns: 1fr; /* apilar en móvil */
+    }
+    .poster {
+      max-width: 360px;
+      justify-self: center;
+    }
+  }
+  .poster {
+    grid-column: 1;
+    justify-self: end;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 12s ease, transform 1200ms ease;
+  }
+  .poster.visible {
+    opacity: 1;
+    transform: none;
+  }
+  .poster img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    background: rgba(255,255,255,.02);
+  }
+  
+  /* El texto SIEMPRE ocupa la columna central y se mantiene centrado */
+  .hero-content {
+    grid-column: 2;
+    justify-self: center;
+    text-align: center;
+  }
+  
+  /* Responsive: apilar en móvil */
+  @media (max-width: 820px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero-content { grid-column: 1; }
+    .poster { grid-column: 1; justify-self: center; margin-top: 1rem; }
+  }
+  
+
+  /*hover de la entrada*/
+
+  /* Contenedor del bloque de asiento */
+.ticket .seat {
+    position: relative;
+    cursor: default;
+    color: #ddd;
+    transition: color .3s ease;
+  }
+  .ticket .seat:hover {
+    color: #fff;
+  }
+  
+  /* Imagen emergente en hover */
+  .ticket .seat::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;           /* justo encima del texto */
+    left: 50%;
+    transform: translate(-50%, -10px);
+    width: 290px;
+    height: 260px;
+    background: url('/images/pit.jpg') center/cover no-repeat;
+    border: 1px solid #333;
+    box-shadow: 0 8px 24px rgba(0,0,0,.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .5s ease, transform .5s ease;
+    z-index: 10;
+  }
+  
+  /* Mostrar al hacer hover */
+  .ticket .seat:hover::after {
+    opacity: 1;
+    transform: translate(-50%, -16px);
+  }
