@@ -164,4 +164,4 @@ My Chemical Romance and Ticketmaster are registered trademarks of their respecti
 ---
 
 ### ✨ Author
-Created with ❤️ and TypeScript for a very special surprise.
+Developed by Jose Luis Quintanilla Blanco with TypeScript for a very special surprise.
