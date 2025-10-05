@@ -5,9 +5,9 @@ const GAME_CFG = {
   grid: 20,
   canvasSize: 480,
   initialSpeedMs: 180,
-  speedGainMs: 10,
+  speedGainMs: 11,
   minSpeedMs: 60,
-  timeLimit: 40,
+  timeLimit: 30,
   itemsGoal: 11, // ajusta aquí
 };
 
@@ -83,7 +83,7 @@ function playNote(freq: number, durMs = INTRO_DUR_MS) {
 // Llama esto cuando coma el i-ésimo ítem (i empieza en 1)
 function playIntroStep(stepIndex: number) {
   try {
-    const idx = stepIndex - 1; // items empieza en 1
+    const idx = stepIndex - 1;
     if (idx >= 0 && idx < INTRO_NOTES.length) {
       const f = noteToFreq(INTRO_NOTES[idx] as any);
       playNote(f);
@@ -256,9 +256,6 @@ function gameOver(win: boolean) {
     // Reemplaza juego por regalo en el DOM
     mountGiftInPlaceOfGate();
 
-    // Lanza el flujo de la página del regalo
-    // (equivalente a pulsar el botón Revelar)
-    // reveal().catch(console.error);
   } else {
     statusMsg.textContent = '¡Ups! Se acabó el tiempo o chocaste. Pulsa "Reintentar".';
     retryBtn.hidden = false;
@@ -268,7 +265,7 @@ function gameOver(win: boolean) {
 function startGame() {
     if (running) return;
     running = true;
-    ensureAudioCtx(); // ← habilita audio con gesto del usuario
+    ensureAudioCtx();
     retryBtn.hidden = true;
     resetGame();
     draw();
@@ -290,7 +287,6 @@ window.addEventListener('keydown', (e) => {
 (function initGate() {
   canvas.width = GAME_CFG.canvasSize;
   canvas.height = GAME_CFG.canvasSize;
-  // gate visible al cargar, gift oculto (lo maneja gift.ts en su init)
   resetGame();
   draw();
   startBtn.addEventListener('click', startGame);
