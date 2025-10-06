@@ -8,10 +8,8 @@ const GAME_CFG = {
   speedGainMs: 11,
   minSpeedMs: 60,
   timeLimit: 27,
-  itemsGoal: 11, // ajusta aquí
+  itemsGoal: 11,
 };
-
-/* pega este bloque tal cual */
 
 /*** ====== AUDIO: Web Audio para 11 notas ====== ***/
 let audioCtx: AudioContext | null = null;
@@ -292,4 +290,5 @@ window.addEventListener('keydown', (e) => {
   startBtn.addEventListener('click', startGame);
   retryBtn.addEventListener('click', startGame);
 })();
+
 
