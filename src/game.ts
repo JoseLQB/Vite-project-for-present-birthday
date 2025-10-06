@@ -7,8 +7,8 @@ const GAME_CFG = {
   initialSpeedMs: 180,
   speedGainMs: 11,
   minSpeedMs: 60,
-  timeLimit: 30,
-  itemsGoal: 11, // ajusta aquí
+  timeLimit: 27,
+  itemsGoal: 1, // ajusta aquí
 };
 
 /* pega este bloque tal cual */
