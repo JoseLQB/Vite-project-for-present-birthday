@@ -8,7 +8,7 @@
     "sector": "Pista",
     "seat": "Entrada General Pit",
     "code": "MCR-MAD-1-ABCD1234",
-    "pdfUrl": "https://chatgpt.com/c/68dd4fbb-4800-832f-9497-ee4994185596#:~:text=Descargar%20mcr_mcr_style_1.pdf"
+    "pdfUrl": "https://auth.ticketmaster.com/as/authorization.oauth2?client_id=860a437ea065.web.ticketmaster.es&response_type=code&scope=openid%20profile%20phone%20email%20tm&redirect_uri=https://identity.ticketmaster.es/exchange&visualPresets=tmes&lang=es-es&placementId=mytmlogin&hideLeftPanel=false&integratorId=prd1741.iccp&intSiteToken=tm-es&TMUO=euwest_a8e/5obgsg7nSiC5oqsipRe27zCJc+V58eVAOUXzBiM=&deviceId=K%2BFB73ppocHHxbnHw7m6w7rCucOU9oY86DZwtQ&doNotTrack=true&disableAutoOptIn=false"
   },
   {
     "band": "My Chemical Romance",
@@ -19,6 +19,6 @@
     "sector": "Pista",
     "seat": "Entrada General Pit",
     "code": "MCR-MAD-2-EFGH5678",
-    "pdfUrl": "https://chatgpt.com/c/68dd4fbb-4800-832f-9497-ee4994185596#:~:text=Descargar%20mcr_mcr_style_2.pdf"
+    "pdfUrl": "https://auth.ticketmaster.com/as/authorization.oauth2?client_id=860a437ea065.web.ticketmaster.es&response_type=code&scope=openid%20profile%20phone%20email%20tm&redirect_uri=https://identity.ticketmaster.es/exchange&visualPresets=tmes&lang=es-es&placementId=mytmlogin&hideLeftPanel=false&integratorId=prd1741.iccp&intSiteToken=tm-es&TMUO=euwest_a8e/5obgsg7nSiC5oqsipRe27zCJc+V58eVAOUXzBiM=&deviceId=K%2BFB73ppocHHxbnHw7m6w7rCucOU9oY86DZwtQ&doNotTrack=true&disableAutoOptIn=false"
   }
 ]
