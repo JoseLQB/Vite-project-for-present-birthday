@@ -5,9 +5,9 @@ const GAME_CFG = {
   grid: 20,
   canvasSize: 480,
   initialSpeedMs: 180,
-  speedGainMs: 11,
+  speedGainMs: 12,
   minSpeedMs: 60,
-  timeLimit: 27,
+  timeLimit: 24,
   itemsGoal: 11,
 };
 
@@ -290,5 +290,6 @@ window.addEventListener('keydown', (e) => {
   startBtn.addEventListener('click', startGame);
   retryBtn.addEventListener('click', startGame);
 })();
+
 
 
